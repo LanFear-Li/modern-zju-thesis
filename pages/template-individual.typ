@@ -14,14 +14,16 @@
     twoside-pagebreak
     set text(font: 字体.仿宋)
 
+    v(2em)
 
-    align(
-      center,
-      text(size: 字号.三号, weight: "bold")[
-        #show heading: x => x.body
-        #heading(pagetitle, numbering: none, level: titlelevel, outlined: outlined)
-        #v(1em)],
-    )
+    show heading.where(level: titlelevel): it => {
+      align(center, [
+        #text(size: 字号.小二, weight: "bold")[#it.body]
+        #v(1em)
+      ])
+    }
+
+    heading(pagetitle, numbering: none, level: titlelevel, outlined: outlined)
 
     block(width: 100%)[
       #set par(justify: true)

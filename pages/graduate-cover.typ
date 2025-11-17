@@ -53,7 +53,7 @@
 
     text(size: 字号.小一, font: 字体.宋体)[#(info.degree)学位论文<mzt:no-header-footer>]
 
-    image("../assets/zju-emblem.svg", width: page.width * 0.15)
+    image("../assets/zju-emblem.svg", width: page.width * info.logo-size)
 
     v(20pt)
     block(
@@ -78,8 +78,8 @@
         #grid(
           columns: (auto, 1fr),
           align: (start, center),
-          "英文论文题目：", text(size: 16pt, info.title-en.first()),
-          ..info.title-en.slice(1).map(v => (none, text(size: 16pt, v))).flatten(),
+          "英文论文题目：", text(size: 14pt, info.title-en.first()),
+          ..info.title-en.slice(1).map(v => (none, text(size: 14pt, v))).flatten(),
           grid.cell(stroke: none)[], grid.cell(stroke: none)[],
         )
       ],
@@ -95,8 +95,9 @@
 
           "申请人姓名：", info.author,
           "指导教师：", info.supervisor,
-          "专业名称：", info.grade + info.major,
-          "研究方向：", info.field,
+          "合作导师：", "",
+          "专业学位类别：", info.grade + info.major,
+          "专业学位领域：", info.field,
           "所在学院：", info.department,
           grid.cell(stroke: none)[], grid.cell(stroke: none)[],
         )
