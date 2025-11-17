@@ -20,7 +20,7 @@
 #import "../dependency/i-figured.typ"
 
 #let show-outline(s) = {
-  show outline.entry.where(level: 1): set text(weight: "bold")
+  show outline.entry.where(level: 1): set text()
   s
 }
 
@@ -44,6 +44,7 @@
   supervisor: "李四",
   submit-date: datetime.today(),
   defense-date: ("二一九三年六月", "September 2193"),
+  logo-size: 0.15
 )
 
 #let graduate-general-set-style(
@@ -85,15 +86,26 @@
   show heading: i-figured.reset-counters
 
   set heading(numbering: "1.1")
-  show heading.where(level: 1): set text(size: 字号.小三)
-  show heading.where(level: 1): x => {
+  show heading.where(level: 1): it => {
+    let chap-num = context {
+      counter(heading).display("1")
+    }
+
     twoside-pagebreak
     v(12pt)
-    x
+
+    block(above: 1.5em, below: 1.5em)[
+      #align(center)[
+        #text(weight: "bold")[第 #chap-num 章 #it.body]
+      ]
+    ]
+
     v(6pt)
   }
-  show heading.where(level: 2): set text(size: 字号.四号)
-  show heading.where(level: 3): set text(size: 字号.小四)
+
+  show heading.where(level: 1): set text(size: 字号.小二)
+  show heading.where(level: 2): set text(size: 字号.小三)
+  show heading.where(level: 3): set text(size: 字号.四号)
   show heading.where(level: 4): set text(size: 字号.小四)
   show heading: set block(above: 1.5em, below: 1.5em)
 
