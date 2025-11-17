@@ -13,16 +13,42 @@
 #import "../utils/twoside.typ": show-twoside-pagebreak, twoside-numbering-footer, twoside-pagebreak
 #import "../utils/near-chapter.typ": near-chapter
 #import "../utils/bib-provider.typ": bib-provider
-#import "../utils/structure.typ": frontmatter, mainmatter
+#import "../utils/structure.typ": abstractmatter, frontmatter, mainmatter
 #import "../utils/appendix.typ": appendix
 #import "../utils/flex-caption.typ": show-flex-caption
 
 #import "../dependency/i-figured.typ"
 
 #let show-outline(s) = {
-  show outline.entry.where(level: 1): set text()
+  show outline.entry.where(level: 1): it => {
+    let h = it.element
+    let toc-page = here().page()
+
+    // hide table of contents entry
+    if h.location().page() == toc-page {
+      return none
+    }
+
+    // hide caption for non-numbered headings
+    if h.numbering == none {
+      return it
+    }
+
+    let nums = counter(heading).at(h.location())
+    let chap = nums.first()
+
+    link(
+      h.location(),
+      it.indented(
+        [第 #chap 章],
+        it.inner(),
+      ),
+    )
+  }
+
   s
 }
+
 
 #let graduate-general-default-info = (
   title: ("毕业论文/设计题目", ""),
@@ -94,11 +120,12 @@
     twoside-pagebreak
     v(12pt)
 
-    block(above: 1.5em, below: 1.5em)[
-      #align(center)[
-        #text(weight: "bold")[第 #chap-num 章 #it.body]
-      ]
-    ]
+    align(
+      center,
+      text(size: 字号.小二, weight: "bold")[
+        第 #chap-num 章 #it.body
+      ],
+    )
 
     v(6pt)
   }
@@ -146,7 +173,12 @@
       title-zh: graduate-title-zh(info: info),
       title-en: graduate-title-en(info: info),
       decl: graduate-decl(),
-      outline: show-outline(main-outline(outlined: true, titlelevel: 1)),
+
+      outline: {
+        set outline(indent: 2.0em)
+        show-outline(main-outline(outlined: true, titlelevel: 1))
+      },
+
       figure-outline: figure-outline(outlined: true, titlelevel: 1),
       table-outline: table-outline(outlined: true, titlelevel: 1),
       individual: individual,

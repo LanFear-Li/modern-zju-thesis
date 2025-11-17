@@ -49,7 +49,7 @@
 
 
     image("../assets/zju-name-graduate.png", width: page.width * 0.3)
-    v(-30pt)
+    v(-20pt)
 
     text(size: 字号.小一, font: 字体.宋体)[#(info.degree)学位论文<mzt:no-header-footer>]
 
@@ -69,7 +69,7 @@
       ],
     )
     if (info.title.len() <= 2 or info.title-en.len() <= 2) {
-      v(20pt)
+      v(10pt)
     }
     block(
       width: 80%,
