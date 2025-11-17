@@ -25,18 +25,28 @@
   title-en: ("Graduation Thesis Title", ""),
   grade: "2014级",
   student-id: "学号",
+  clc: "TP311.5",
   author: "姓名",
   department: "学院",
   major: "专业",
+  field: "领域",
   degree: "博士",
   supervisor: "指导教师",
   submit-date: "递交日期",
+  defense-date: ("2026年3月1日", "March 1th, 2026"),
+
+  reviewer: ("", "", "", "", ""),
+  committe: ("", "", "", "", "", ""),
+  reviewer-en: ("", "", "", "", ""),
+  committe-en: ("", "", "", "", "", ""),
+
+  logo-size: 0.12
 )
 
 
 #let doc = graduate-general(
   info: info,
-  twoside: true,
+  twoside: false,
   bibsource: read("ref.bib"),
 )
 #show: doc.style
@@ -47,12 +57,14 @@
 
 #doc.pages.decl
 
-#show: frontmatter
+#show: abstractmatter
 
 #let individual = doc.pages.individual
 #individual("致 谢")[]
 #individual("摘 要")[]
 #individual("Abstract")[]
+
+#show: frontmatter
 
 #doc.pages.outline
 #doc.pages.figure-outline
