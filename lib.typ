@@ -5,4 +5,4 @@
 #import "utils/part.typ"
 
 #import "utils/appendix.typ": appendix
-#import "utils/structure.typ": frontmatter, mainmatter
+#import "utils/structure.typ": abstractmatter, frontmatter, mainmatter
