@@ -46,6 +46,7 @@
     )
   }
 
+  set par(leading: 0.5em)
   s
 }
 
