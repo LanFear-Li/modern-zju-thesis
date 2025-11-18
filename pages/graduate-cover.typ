@@ -63,7 +63,7 @@
         #grid(
           columns: (auto, 1fr),
           align: (start, center),
-          "中文论文题目：", info.title.first(),
+          text(size: 字号.三号, "中文论文题目："), info.title.first(),
           ..info.title.slice(1).map(v => (none, v)).flatten(),
         )
       ],
@@ -78,7 +78,7 @@
         #grid(
           columns: (auto, 1fr),
           align: (start, center),
-          "英文论文题目：", text(size: 14pt, info.title-en.first()),
+          text(size: 字号.三号, "英文论文题目："), text(size: 14pt, info.title-en.first()),
           ..info.title-en.slice(1).map(v => (none, text(size: 14pt, v))).flatten(),
           grid.cell(stroke: none)[], grid.cell(stroke: none)[],
         )
