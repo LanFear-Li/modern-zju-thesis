@@ -46,7 +46,6 @@
     )
   }
 
-  set par(leading: 0.5em)
   s
 }
 
@@ -177,11 +176,21 @@
 
       outline: {
         set outline(indent: 2.0em)
+        set par(leading: 0.5em)
+
         show-outline(main-outline(outlined: true, titlelevel: 1))
       },
 
-      figure-outline: figure-outline(outlined: true, titlelevel: 1),
-      table-outline: table-outline(outlined: true, titlelevel: 1),
+      figure-outline: {
+        set par(leading: 0.5em)
+        figure-outline(outlined: true, titlelevel: 1)
+      },
+
+      table-outline: {
+        set par(leading: 0.5em)
+        table-outline(outlined: true, titlelevel: 1)
+      },
+
       individual: individual,
       bibliography: bibliography-page(bib: bibcontent, individual: individual),
     ),
