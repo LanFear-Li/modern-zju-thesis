@@ -113,6 +113,7 @@
 
   set heading(numbering: "1.1")
   show heading.where(level: 1): it => {
+    let reset-counters = i-figured.reset-counters(it, level: 1, extra-kinds: (), equations: true, return-orig-heading: false)
     let chap-num = context {
       counter(heading).display("1")
     }
@@ -126,6 +127,8 @@
         第 #chap-num 章 #it.body
       ],
     )
+
+    reset-counters
 
     v(6pt)
   }
