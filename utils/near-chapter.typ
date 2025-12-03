@@ -7,13 +7,28 @@
     return
   }
 
-  let heading = headings_after.first()
-  if heading.location().page() > here().page() {
-    if headings_before.len() == 0 {
-      return
+  let pick-heading = () => {
+    let heading = headings_after.first()
+    if heading.location().page() > here().page() {
+      if headings_before.len() == 0 {
+        return none
+      }
+      headings_before.last()
+    } else {
+      heading
     }
-    headings_before.last().body
+  }
+
+  let target = pick-heading()
+  if target.numbering == none {
+    target.body
   } else {
-    heading.body
+    let nums = counter(heading).at(target.location())
+    if nums.len() == 0 {
+      target.body
+    } else {
+      let chap = str(nums.first())
+      [第 #chap 章 #target.body]
+    }
   }
 }
