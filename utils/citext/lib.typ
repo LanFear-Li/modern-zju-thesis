@@ -61,6 +61,7 @@
 
 #let extcitefull(bib, id) = {
   show regex("\$.+?\$"): it => mi(it)
+  show regex("et\\s+al\\.") : it => emph(it.text)
   (bib.get)(id).at("bibliography")
 }
 #let citeauthor-one-two-more(authors, ETAL: none, AND: none) = {
