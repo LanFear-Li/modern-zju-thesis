@@ -78,8 +78,8 @@
         #grid(
           columns: (auto, 1fr),
           align: (start, center),
-          text(size: 字号.三号, "英文论文题目："), text(size: 14pt, info.title-en.first()),
-          ..info.title-en.slice(1).map(v => (none, text(size: 14pt, v))).flatten(),
+          text(size: 字号.三号, "英文论文题目："), text(size: 15pt, info.title-en.first()),
+          ..info.title-en.slice(1).map(v => (none, text(size: 15pt, v))).flatten(),
           grid.cell(stroke: none)[], grid.cell(stroke: none)[],
         )
       ],
