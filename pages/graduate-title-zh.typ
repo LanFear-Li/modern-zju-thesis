@@ -36,7 +36,7 @@
 
     v(20pt)
     block(
-      width: 80%,
+      width: 90%,
       [
         #set text(size: 字号.小二, weight: "bold")
         #grid(

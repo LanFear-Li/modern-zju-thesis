@@ -57,7 +57,7 @@
 
     v(20pt)
     block(
-      width: 100%,
+      width: 110%,
       [
         #set text(size: 字号.小二, weight: "bold")
         #grid(
@@ -72,14 +72,14 @@
       v(10pt)
     }
     block(
-      width: 100%,
+      width: 110%,
       [
         #set text(size: 字号.小二, weight: "bold")
         #grid(
           columns: (auto, 1fr),
           align: (start, center),
-          text(size: 字号.三号, font: 字体.宋体, "英文论文题目："), info.title-en.first(),
-          ..info.title-en.slice(1).map(v => (none, v)).flatten(),
+          text(size: 字号.三号, font: 字体.宋体, "英文论文题目："), text(size: 16pt, info.title-en.first()),
+          ..info.title-en.slice(1).map(v => (none, text(size: 16pt, v))).flatten(),
           grid.cell(stroke: none)[], grid.cell(stroke: none)[],
         )
       ],
