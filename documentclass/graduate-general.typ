@@ -182,18 +182,18 @@
 
       outline: {
         set outline(indent: 2.0em)
-        set par(leading: 0.5em)
+        set par(leading: 0.6em)
 
         show-outline(main-outline(outlined: true, titlelevel: 1))
       },
 
       figure-outline: {
-        set par(leading: 0.5em)
+        set par(leading: 0.6em)
         figure-outline(outlined: true, titlelevel: 1)
       },
 
       table-outline: {
-        set par(leading: 0.5em)
+        set par(leading: 0.6em)
         table-outline(outlined: true, titlelevel: 1)
       },
 
