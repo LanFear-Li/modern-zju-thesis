@@ -15,7 +15,7 @@
 
   context {
     counter(page).update(0)
-    v(-40pt)
+    v(-30pt)
     set grid(
       row-gutter: row-gutter,
       rows: 1em,
@@ -49,7 +49,7 @@
 
 
     image("../assets/zju-name-graduate.png", width: page.width * 0.3)
-    v(-20pt)
+    v(-25pt)
 
     text(size: 字号.小一, font: 字体.宋体)[#(info.degree)学位论文<mzt:no-header-footer>]
 
@@ -57,13 +57,13 @@
 
     v(20pt)
     block(
-      width: 80%,
+      width: 100%,
       [
         #set text(size: 字号.小二, weight: "bold")
         #grid(
           columns: (auto, 1fr),
           align: (start, center),
-          text(size: 字号.三号, "中文论文题目："), info.title.first(),
+          text(size: 字号.三号, font: 字体.宋体, "中文论文题目："), info.title.first(),
           ..info.title.slice(1).map(v => (none, v)).flatten(),
         )
       ],
@@ -72,33 +72,33 @@
       v(10pt)
     }
     block(
-      width: 80%,
+      width: 100%,
       [
         #set text(size: 字号.小二, weight: "bold")
         #grid(
           columns: (auto, 1fr),
           align: (start, center),
-          text(size: 字号.三号, "英文论文题目："), text(size: 15pt, info.title-en.first()),
-          ..info.title-en.slice(1).map(v => (none, text(size: 15pt, v))).flatten(),
+          text(size: 字号.三号, font: 字体.宋体, "英文论文题目："), info.title-en.first(),
+          ..info.title-en.slice(1).map(v => (none, v)).flatten(),
           grid.cell(stroke: none)[], grid.cell(stroke: none)[],
         )
       ],
     )
 
     block(
-      width: 60%,
+      width: 70%,
       [
         #set text(size: 字号.四号)
         #grid(
           columns: (auto, 1fr),
           align: (start, center),
 
-          "申请人姓名：", info.author,
-          "指导教师：", info.supervisor,
-          "合作导师：", "",
-          "专业学位类别：", info.grade + info.major,
-          "专业学位领域：", info.field,
-          "所在学院：", info.department,
+          text(font: 字体.宋体, "申请人姓名："), info.author,
+          text(font: 字体.宋体, "指导教师："), info.supervisor,
+          text(font: 字体.宋体, "合作导师："), "",
+          text(font: 字体.宋体, "专业学位类别："), info.grade + info.major,
+          text(font: 字体.宋体, "专业学位领域："), info.field,
+          text(font: 字体.宋体, "所在学院："), info.department,
           grid.cell(stroke: none)[], grid.cell(stroke: none)[],
         )
         #align(right)[
@@ -106,7 +106,7 @@
           #grid(
             columns: (auto, 10.5em),
             align: (start, center),
-            "论文提交日期", info.submit-date,
+            text(font: 字体.宋体, "论文提交日期"), text(font: 字体.宋体, info.submit-date),
           )
         ]
       ],

@@ -1,5 +1,6 @@
 #let abstractmatter(s) = {
   set page(numbering: "i")
+  set par(spacing: 0.8em)
   counter(page).update(1)
   s
 }
@@ -12,7 +13,7 @@
 
 #let mainmatter(s) = {
   set page(numbering: "1")
-  set par(spacing: 1.3em)
+  set par(spacing: 0.8em)
   counter(page).update(1)
   s
 }

@@ -82,9 +82,10 @@
   set page(
     paper: "a4",
     margin: (
-      x: 2.5cm,
-      bottom: 2.54cm + 12pt + 30pt,
-      top: 2.54cm + 12pt + 4mm,
+      x: 3.2cm,
+      y: 3.8cm,
+      // bottom: 2.54cm + 12pt + 30pt,
+      // top: 2.54cm + 12pt + 4mm,
     ),
   )
   show: show-twoside-pagebreak.with(twoside: twoside)
@@ -92,17 +93,19 @@
 
   // Header and footer
   set page(
-    header-ascent: 4mm,
-    footer-descent: 35pt,
+    numbering: "1",
+    header-ascent: 0.8cm,
+    footer-descent: 0.8cm,
     header: header(
       left: [浙江大学#(degree)学位论文],
       right: near-chapter,
+      size: 10.5pt,
     ),
     footer: twoside-numbering-footer,
   )
 
   // Paragraph and text
-  set par(leading: 1.3em, first-line-indent: (amount: 2em, all: true), justify: true)
+  set par(leading: 10pt, first-line-indent: (amount: 2em, all: true), justify: true)
   set text(font: 字体.仿宋, size: 字号.小四, lang: "zh", discretionary-ligatures: true)
   show: show-cn-fakebold
   set underline(offset: 0.2em)

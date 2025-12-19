@@ -20,6 +20,9 @@
   }
 
   let target = pick-heading()
+  if target == none {
+    return none
+  }
   if target.numbering == none {
     target.body
   } else {

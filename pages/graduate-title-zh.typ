@@ -57,7 +57,7 @@
     block(
       width: 60%,
       [
-        #set text(size: 字号.三号, weight: "bold")
+        #set text(size: 字号.三号, weight: "bold", font: 字体.宋体)
         #grid(
           columns: (auto, 0.8fr),
           align: (start, center),
@@ -74,7 +74,7 @@
     block(
       width: 70%,
       [
-        #set text(size: 字号.四号)
+        #set text(size: 字号.四号, font: 字体.宋体)
         #grid(
           columns: (auto, 1fr),
           align: (end, center),
