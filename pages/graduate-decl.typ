@@ -49,7 +49,7 @@
 
       #align(center)[
         #table(
-          columns: (0.5fr, auto, 0.5fr, auto),
+          columns: (0.5fr, auto, 0.4fr, auto),
           align: (start, center),
           stroke: none,
           row-gutter: row-gutter,
