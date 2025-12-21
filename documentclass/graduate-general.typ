@@ -114,6 +114,7 @@
 
   // Headings
   show heading: i-figured.reset-counters
+  show heading: set block(sticky: false)
 
   set heading(numbering: "1.1")
   show heading.where(level: 1): it => {
