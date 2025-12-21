@@ -105,7 +105,7 @@
   )
 
   // Paragraph and text
-  set par(leading: 10pt, first-line-indent: (amount: 2em, all: true), justify: true)
+  set par(leading: 13pt, first-line-indent: (amount: 2em, all: true), justify: true)
   set text(font: 字体.仿宋, size: 字号.小四, lang: "zh", discretionary-ligatures: true)
   set text(costs: (widow: 0%, orphan: 0%))
   show: show-cn-fakebold
