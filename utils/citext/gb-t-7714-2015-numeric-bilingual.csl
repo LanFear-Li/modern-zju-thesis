@@ -413,6 +413,7 @@
                 <else-if type="dataset post post-weblog software webpage" match="any">
                     <!-- 4.6 电子资源 -->
                     <text macro="title" />
+                    <text macro="access" />
                     <text macro="publisher" />
                 </else-if>
                 <else-if type="chapter entry-dictionary entry-encyclopedia paper-conference"
@@ -436,7 +437,12 @@
                     <text macro="publisher" />
                 </else>
             </choose>
-            <text macro="access" />
+            <choose>
+                <if type="dataset post post-weblog software webpage" match="any" />
+                <else>
+                    <text macro="access" />
+                </else>
+            </choose>
         </group>
     </macro>
     <citation collapse="citation-number" after-collapse-delimiter=",">
