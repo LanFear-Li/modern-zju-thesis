@@ -72,7 +72,7 @@
       v(20pt)
     }
     block(
-      width: 70%,
+      width: 100%,
       [
         #set text(size: 字号.四号, font: 字体.宋体)
         #grid(

@@ -68,7 +68,7 @@
       ],
     )
     block(
-      width: 70%,
+      width: 100%,
       [
         #set text(size: 字号.四号)
         #grid(
@@ -93,7 +93,17 @@
           columns: (auto, 1fr),
           align: (end, center),
 
-          ..info.committe-en.enumerate(start: 0).slice(1).map(v => ([Committeeman #(v.at(0)):], v.at(1))).flatten(),
+          ..info.committe-en
+            .enumerate(start: 0)
+            .slice(1)
+            .map(v => (
+              [Committeeman #(v.at(0)):],
+              {
+                set text(size: 字号.小四)
+                v.at(1)
+              },
+            ))
+            .flatten(),
           grid.cell(stroke: none)[], grid.cell(stroke: none)[],
         )
         #align(center)[
